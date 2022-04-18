@@ -3,3 +3,10 @@ version: '${project.version}'
 main: de.dark.mobheads.MobHeads
 api-version: 1.16
 authors: [ O_oDark ]
+
+commands:
+  mobheads:
+    aliases:
+      - mobhead
+      - mh
+      - mobh
