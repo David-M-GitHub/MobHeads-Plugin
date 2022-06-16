@@ -11,7 +11,10 @@ public class MobKillEvent implements Listener {
 
     @EventHandler
     public void onMobKill(EntityDeathEvent e) {
+
         for (Heads heads : Heads.values()) {
+            if (heads.getEntityType() == null) return;
+            if (e.getEntityType() == null) return;
             if (e.getEntityType() == heads.getEntityType()) {
                 Random r = new Random();
                 int ra = r.nextInt(100);
@@ -20,6 +23,7 @@ public class MobKillEvent implements Listener {
                 }
             }
         }
+
     }
 
 }

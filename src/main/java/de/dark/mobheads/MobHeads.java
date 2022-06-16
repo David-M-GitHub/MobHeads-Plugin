@@ -5,6 +5,7 @@ import de.dark.mobheads.commands.CommandManager;
 import de.dark.mobheads.events.JoinQuitEvent;
 import de.dark.mobheads.events.MobKillEvent;
 import de.dark.mobheads.utils.Config;
+import de.dark.mobheads.utils.Heads;
 import de.dark.mobheads.utils.UpdateChecker;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -28,8 +29,10 @@ public final class MobHeads extends JavaPlugin {
         Config.init();
         Config.getConfig().options().copyDefaults(true);
         Config.save();
+        
 
         prefix = Config.getConfig().getString("prefix");
+
 
         Metrics metrics = new Metrics(this, 13246);
         new UpdateChecker(this, 97388).getLatestVersion(version -> {
